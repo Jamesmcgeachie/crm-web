@@ -6,16 +6,11 @@ class Contact
 	@@contacts = []
 	@@id = 1
 
-	# good to use = nil if setting a non-mandatory paramater as it evaluates to false. An empty string = true.
-	# example: def initialize(first_name, last_name, email, notes = nil)
-	# below is the example of how to set up initialize with a hash, but also require first and last name
 	def initialize(first_name, last_name, options = {})
 		@first_name = first_name
 		@last_name = last_name
 		@email = options[:email]
 		@notes = options[:notes]
-		# this line below I like, it's a way to take the instance id from the class variable id, so the
-		# class variable keeps incramenting and the @id is taking a value from the current value of @@id
 		@id = @@id
 		@@id += 1
 	end
@@ -40,7 +35,6 @@ class Contact
 	end
 
 	def self.display(attribute)
-		puts "-------"
 		@@contacts.each do |contact|
 			if attribute == 1
 				puts "First Name: #{contact.first_name}"
@@ -54,7 +48,6 @@ class Contact
 				puts "This shouldn't be possible"
 			end
 		end
-		puts "-------"
 	end
 
 	def self.update(id, attribute, new_value)
@@ -71,14 +64,12 @@ class Contact
 			puts "Something went badly wrong here"
 		end
 		puts "Changes saved!"
-		puts "-------"
 	end
 
 	def self.delete(id)
 		to_delete = find(id)
 		@@contacts.delete_at(@@contacts.index(to_delete))
 		puts "Contact #{id} has been deleted"
-		puts "-------"
 	end
 
 	def full_name
