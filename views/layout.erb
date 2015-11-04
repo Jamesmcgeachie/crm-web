@@ -3,9 +3,18 @@
 <head>
 	<meta charset="UTF-8">
 	<title> James' CRM App </title>
+	<link rel="stylesheet" type="text/css" href="/styles.css">
 </head>
 <body>
-	<%= yield %>
-<footer>Created by James McGeachie!</footer>
+	<div class="divcontainer">
+			<div id="navbar">
+				<nav>
+					<a href="/contacts">View all contacts</a>
+					<a href="/contacts/new">Create a new contact</a>
+				</nav>
+			</div>
+		<%= yield %>
+	<div id="footer">Created by James McGeachie!</div>
+	</div>
 </body>
 </html>

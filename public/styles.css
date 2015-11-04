@@ -1,0 +1,51 @@
+body {
+	background-color: orange;
+	color: white;
+	font-size: 20px;
+}
+
+nav > a {
+	padding-right: 10px;
+}
+
+#navbar {
+	margin-bottom: 90%;
+	background-color: #15053f;
+	border-radius: 20px;
+	position: absolute;
+}
+
+p {
+	color: orange;
+}
+
+.divcontainer {
+
+
+	font-family: Arial;
+	padding: 60px;
+	background-color: #15053f;
+	margin-left: 10%;
+	margin-right: 10%;
+	margin-top: 5%;
+	position: absolute;
+	border-radius: 20px;
+
+}
+
+h1 {
+	padding: 20px;
+}
+
+.menu {
+	padding: 20px;
+}
+
+#footer {
+	clear: both;
+}
+
+a {
+	text-decoration: none;
+	color: #f3ae45;
+}
