@@ -49,3 +49,21 @@ a {
 	text-decoration: none;
 	color: #f3ae45;
 }
+
+.labels {
+	float: left;
+	display: inline-block;
+}
+
+.inputs {
+	float: right;
+	display: inline-block;
+}
+
+#submit {
+	clear: both;
+}
+
+.form {
+	padding: 20px;
+}
