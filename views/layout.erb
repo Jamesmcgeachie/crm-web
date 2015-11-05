@@ -6,15 +6,24 @@
 	<link rel="stylesheet" type="text/css" href="/styles.css">
 </head>
 <body>
-	<div class="divcontainer">
-			<div id="navbar">
-				<nav>
-					<a href="/contacts">View all contacts</a>
-					<a href="/contacts/new">Create a new contact</a>
-				</nav>
-			</div>
-		<%= yield %>
-	<div id="footer">Created by James McGeachie!</div>
+<div id="logoandcontent">
+	<div id="logo">
+	crm
 	</div>
+	<div class="divcurvedbox">
+			<div class="contentcontainer">
+				<div id="navbar">
+					<nav>
+						<a href="/">Home</a>
+						<a href="/contacts">All</a>
+						<a href="/contacts/new">New</a>
+						<a href="/">Edit</a>
+					</nav>
+				</div>
+			<%= yield %>
+			</div>
+		<div id="footer">Created by James McGeachie!</div>
+	</div>
+</div>
 </body>
 </html>

@@ -5,36 +5,61 @@ body {
 }
 
 nav > a {
-	padding-right: 10px;
+	padding-right: 15px;
+}
+
+#logoandcontent {
+	position: relative;
+	margin-left: 3%;
+	margin-right: 3%;
+}
+
+#logo {
+	font-family: Arial;
+	font-size: 120px;
+	text-align: center;
+	padding: 10px;
+	float: top;
+	color: #15053f;
 }
 
 #navbar {
-	margin-bottom: 90%;
+	padding: 10px;
+	border: 1px solid white;
 	background-color: #15053f;
-	border-radius: 20px;
-	position: absolute;
+	position: relative;
+	font-size: 14px;
+	border-radius: 5px;
+	text-align: center;
 }
 
 p {
 	color: orange;
 }
 
-.divcontainer {
-
-
+.divcurvedbox {
 	font-family: Arial;
-	padding: 60px;
 	background-color: #15053f;
 	margin-left: 10%;
 	margin-right: 10%;
-	margin-top: 5%;
-	position: absolute;
+	position: relative;
 	border-radius: 20px;
+	margin-bottom: 10%;
+	padding-top: 30px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 100px;
+}
 
+.contentcontainer {
+	position: relative;
+	padding: 20px;
 }
 
 h1 {
+	font-size: 22px;
 	padding: 20px;
+	text-align: center;
 }
 
 .menu {
@@ -42,7 +67,10 @@ h1 {
 }
 
 #footer {
+	font-size: 12px;
+	padding: 10px;
 	clear: both;
+	text-align: center;
 }
 
 a {
@@ -53,6 +81,8 @@ a {
 .labels {
 	float: left;
 	display: inline-block;
+	font-size: 20.5px;
+	margin-right: 10px;
 }
 
 .inputs {
@@ -61,6 +91,7 @@ a {
 }
 
 #submit {
+	text-align: right;
 	clear: both;
 }
 

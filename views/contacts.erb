@@ -1,6 +1,6 @@
-<ul>
 <h1>All Contacts</h1>
-<% Contact.all.each do |contact| %>
-  <li><%= contact.first_name %> <%= contact.last_name %> | <%= contact.email %> | <%= contact.notes %></li>
-<% end %>
+<ul>
+	<% Contact.all.each do |contact| %>
+	  <li><%= contact.first_name %> <%= contact.last_name %> | <%= contact.email %> | <%= contact.notes %></li>
+	<% end %>
 </ul>

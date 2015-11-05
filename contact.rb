@@ -15,17 +15,27 @@ class Contact
 		@@id += 1
 	end
 
+	def self.delete_all
+		@@contacts = []
+		@@id = 1
+	end
+
+	def delete
+		@@contacts.delete(self)
+	end
+
+
 	def self.create(first_name, last_name, options = {})
 		new_contact = new(first_name, last_name, options)
 		@@contacts << new_contact
-		puts "#{first_name} has been added to contacts."
+		new_contact
 	end
 
 	def self.all
 		@@contacts
 	end
 
-	def self.find(id)
+	def self.get(id)
 		@@contacts.each do |contact|
 			if contact.id == id
 				return contact
@@ -34,42 +44,27 @@ class Contact
 		return nil
 	end
 
-	def self.display(attribute)
+	def update(key, value)
+		case
+		when key == "first_name"
+			self.first_name = value
+		when key == "last_name"
+			self.last_name = value
+		when key == "notes"
+			self.notes = value
+		when key == "email"
+			self.email = value
+		end
+	end
+
+	def self.search_by_attribute(key, value)
+		contacts = []
 		@@contacts.each do |contact|
-			if attribute == 1
-				puts "First Name: #{contact.first_name}"
-			elsif attribute == 2
-				puts "Last Name: #{contact.last_name}"
-			elsif attribute == 3
-				puts "Email: #{contact.email}"
-			elsif attribute == 4
-				puts "Notes: #{contact.notes}"
-			else
-				puts "This shouldn't be possible"
+			if contact.send(key.to_sym) == value
+				contacts << contact
 			end
 		end
-	end
-
-	def self.update(id, attribute, new_value)
-		to_change = find(id)
-		if attribute == 1
-			to_change.first_name = new_value
-		elsif attribute == 2
-			to_change.last_name = new_value
-		elsif attribute == 3
-			to_change.email = new_value
-		elsif attribute == 4
-			to_change.notes = new_value
-		else
-			puts "Something went badly wrong here"
-		end
-		puts "Changes saved!"
-	end
-
-	def self.delete(id)
-		to_delete = find(id)
-		@@contacts.delete_at(@@contacts.index(to_delete))
-		puts "Contact #{id} has been deleted"
+		return contacts
 	end
 
 	def full_name
