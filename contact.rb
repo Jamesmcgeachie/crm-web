@@ -35,7 +35,7 @@ class Contact
 		@@contacts
 	end
 
-	def self.get(id)
+	def self.find(id)
 		@@contacts.each do |contact|
 			if contact.id == id
 				return contact

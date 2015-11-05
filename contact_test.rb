@@ -11,8 +11,8 @@ class TestContact < Minitest::Test
     assert_equal [@contact], Contact.all
   end
 
-  def test_get
-    assert_equal @contact, Contact.get(1)
+  def test_find
+    assert_equal @contact, Contact.find(1)
   end
 
   def test_full_name
