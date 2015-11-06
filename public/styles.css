@@ -20,26 +20,28 @@ nav > a {
 	text-align: center;
 	padding: 10px;
 	float: top;
-	color: #15053f;
+	color: #283261;
 }
 
 #navbar {
 	padding: 10px;
 	border: 1px solid white;
-	background-color: #15053f;
+	background-color: ##4d5ba0;
 	position: relative;
 	font-size: 14px;
 	border-radius: 5px;
 	text-align: center;
+	margin: auto;
+	width: 40%;
 }
 
 p {
-	color: orange;
+	color: white;
 }
 
 .divcurvedbox {
 	font-family: Arial;
-	background-color: #15053f;
+	background-color: #283261;
 	margin-left: 10%;
 	margin-right: 10%;
 	position: relative;
@@ -96,5 +98,30 @@ a {
 }
 
 .form {
+	padding: 20px;
+}
+
+#show {
+	text-align: center;
+}
+
+#all {
+	text-align: center;
+	float: center;
+	margin: auto;
+}
+
+div > table {
+	border: 1px solid white;
+	margin: auto;
+	text-align: left;
+}
+
+td {
+	font-size: 16px;
+}
+
+.delete {
+	text-align: center;
 	padding: 20px;
 }

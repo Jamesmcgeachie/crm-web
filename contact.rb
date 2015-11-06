@@ -41,7 +41,6 @@ class Contact
 				return contact
 			end
 		end
-		return nil
 	end
 
 	def update(key, value)

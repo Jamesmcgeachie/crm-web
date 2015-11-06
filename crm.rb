@@ -1,6 +1,9 @@
 require 'sinatra'
 require_relative 'contact'
 
+Contact.create("Foo", "Bar", {email: "foo@bar.com", notes: "some note"})
+Contact.create("James", "McGeachie", {email: "wefwefeff@bar.com", notes: "fwefwefee"})
+
 get '/' do
 	@crm_app_name = "My CRM"
 	erb :index
@@ -18,4 +21,45 @@ end
 post '/contacts' do
   Contact.create(params[:first_name], params[:last_name], { email: params[:email], notes: params[:notes]})
   redirect to('/contacts')
+end
+
+get "/contacts/:id" do
+	@contact = Contact.find(params[:id].to_i)
+	if @contact
+		erb :show
+	else
+		raise Sinatra::NotFound
+	end
+end
+
+get "/contacts/:id/edit" do
+  @contact = Contact.find(params[:id].to_i)
+  if @contact
+    erb :edit
+  else
+    raise Sinatra::NotFound
+  end
+end
+
+put "/contacts/:id" do
+	@contact = Contact.find(params[:id].to_i)
+ 	if @contact
+	  @contact.first_name = params[:first_name]
+	  @contact.last_name = params[:last_name]
+	  @contact.email = params[:email]
+	  @contact.notes = params[:notes]
+
+   	redirect to("/contacts")
+  else
+    raise Sinatra::NotFound
+  end
+end
+
+delete "/contacts/:id" do
+	@contact = Contact.find(params[:id].to_i)
+	if @contact.delete
+		redirect to("/contacts")
+	else
+		raise Sinatra::NotFound
+	end
 end
