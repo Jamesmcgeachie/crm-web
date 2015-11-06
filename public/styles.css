@@ -1,5 +1,5 @@
 body {
-	background-color: #d4f7f9;
+	background-color: white;
 	color: white;
 	font-size: 20px;
 }
@@ -10,29 +10,35 @@ nav > a {
 
 #logoandcontent {
 	position: relative;
-	margin-left: 3%;
-	margin-right: 3%;
+	background-color: #d4f7f9;
+	margin: auto;
+	width: 85%;
+	border: 10px double #283261;
+	border-radius: 30px;
 }
 
 #logo {
 	font-family: Arial;
-	font-size: 120px;
+	font-size: 100px;
 	text-align: center;
-	padding: 10px;
+	padding: 5px;
 	float: top;
+	display: block;
 	color: #283261;
+	width: 40%;
+	margin: auto;
 }
 
 #navbar {
 	padding: 10px;
 	border: 1px solid white;
-	background-color: ##4d5ba0;
+	background-color: #283261;
 	position: relative;
 	font-size: 14px;
 	border-radius: 5px;
 	text-align: center;
 	margin: auto;
-	width: 40%;
+	width: 55%;
 }
 
 p {
@@ -42,37 +48,42 @@ p {
 .divcurvedbox {
 	font-family: Arial;
 	background-color: #283261;
-	margin-left: 10%;
-	margin-right: 10%;
+	width: 65%;
+	margin: auto;
 	position: relative;
 	border-radius: 20px;
-	margin-bottom: 10%;
 	padding-top: 30px;
 	padding-left: 10px;
 	padding-right: 10px;
-	padding-bottom: 100px;
+	padding-bottom: 70px;
 }
 
 .contentcontainer {
 	position: relative;
-	padding: 20px;
+	padding: 10px;
+	width: 80%;
+	margin: auto;
 }
 
 h1 {
 	font-size: 22px;
-	padding: 20px;
 	text-align: center;
+	margin-top: 30px;
 }
 
 .menu {
-	padding: 20px;
+	margin: auto;
+	margin-top: 25px;
+	font-size: 20px;
 }
 
 #footer {
 	font-size: 12px;
 	padding: 10px;
 	clear: both;
+	color: #283261;
 	text-align: center;
+	margin: auto;
 }
 
 a {
@@ -113,8 +124,9 @@ a {
 
 div > table {
 	border: 1px solid white;
-	margin: auto;
 	text-align: left;
+	padding: 10px;
+	margin: auto;
 }
 
 td {
@@ -124,4 +136,16 @@ td {
 .delete {
 	text-align: center;
 	padding: 20px;
+}
+
+#mainmenu {
+	text-align: center;
+}
+
+th > tr > td {
+	text-align: center;
+}
+
+div > p > label {
+	color: orange;
 }
