@@ -16,6 +16,7 @@ class Contact
 	end
 end
 
+DataMapper.finalize
 DataMapper.auto_upgrade!
 
 Contact.create("Foo", "Bar", {email: "foo@bar.com", notes: "some note"})
