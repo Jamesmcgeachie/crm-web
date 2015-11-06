@@ -19,15 +19,13 @@ end
 DataMapper.finalize
 DataMapper.auto_upgrade!
 
-Contact.create("Foo", "Bar", {email: "foo@bar.com", notes: "some note"})
-Contact.create("James", "McGeachie", {email: "wefwefeff@bar.com", notes: "fwefwefee"})
-
 get '/' do
 	@crm_app_name = "My CRM"
 	erb :index
 end
 
 get'/contacts' do
+	@contacts = Contact.all
 	erb :contacts
 end
 
@@ -36,7 +34,12 @@ get'/contacts/new' do
 end
 
 post '/contacts' do
-  Contact.create(params[:first_name], params[:last_name], { email: params[:email], notes: params[:notes]})
+  contact = Contact.create(
+   first_name: params[:first_name],
+   last_name: params[:last_name],
+   email: params[:email],
+   notes: params[:notes]
+   )
   redirect to('/contacts')
 end
 
@@ -61,10 +64,10 @@ end
 put "/contacts/:id" do
 	@contact = Contact.get(params[:id].to_i)
  	if @contact
-	  @contact.first_name = params[:first_name]
-	  @contact.last_name = params[:last_name]
-	  @contact.email = params[:email]
-	  @contact.notes = params[:notes]
+	  @contact.update( first_name: params[:first_name])
+	  @contact.update( last_name: params[:last_name])
+	  @contact.update( email: params[:email])
+	  @contact.update( notes: params[:notes])
 
    	redirect to("/contacts")
   else
@@ -74,7 +77,7 @@ end
 
 delete "/contacts/:id" do
 	@contact = Contact.get(params[:id].to_i)
-	if @contact.delete
+	if @contact.destroy
 		redirect to("/contacts")
 	else
 		raise Sinatra::NotFound

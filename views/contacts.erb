@@ -8,7 +8,7 @@
 			<td>Notes</td>
 		</tr>
 	</th>
-	<% Contact.all.each do |contact| %>
+	<% @contacts.each do |contact| %>
 		<tr>
 		  <td><a href="contacts/<%= contact.id %>"><%= contact.full_name %></a></td>
 		  <td><%= contact.email %></td>
