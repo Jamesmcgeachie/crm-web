@@ -1,5 +1,22 @@
 require 'sinatra'
-require_relative 'contact'
+require 'data_mapper'
+DataMapper.setup(:default, 'sqlite3:database.sqlite3')
+
+class Contact
+	include DataMapper::Resource
+
+	property :id, Serial
+	property :first_name, String
+	property :last_name, String
+	property :email, String
+	property :notes, Text
+
+	def full_name
+		"#{first_name} #{last_name}"
+	end
+end
+
+DataMapper.auto_upgrade!
 
 Contact.create("Foo", "Bar", {email: "foo@bar.com", notes: "some note"})
 Contact.create("James", "McGeachie", {email: "wefwefeff@bar.com", notes: "fwefwefee"})
@@ -8,7 +25,6 @@ get '/' do
 	@crm_app_name = "My CRM"
 	erb :index
 end
-
 
 get'/contacts' do
 	erb :contacts
